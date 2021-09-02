@@ -49,6 +49,17 @@ second
 third"
 `;
 
+exports[`dedent works with newlines in interpolation 1`] = `
+"first
+second
+  third
+fourth
+fifth fifth again
+  sixth
+seventh
+eighth"
+`;
+
 exports[`dedent works with removing same number of spaces 1`] = `
 "first
    second
