@@ -21,7 +21,9 @@ export default function dedent(
       .replace(/\\\{/g, "{");
 
     if (i < values.length) {
-      result += values[i];
+      const lastLine = result.substring(result.lastIndexOf('\n') + 1);
+      const m = lastLine.match(/^(\s*)\S?/);
+      result += values[i].replace(/\n/g, '\n' + m[1]);
     }
   }
 

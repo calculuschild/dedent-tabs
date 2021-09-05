@@ -19,6 +19,21 @@ describe("dedent", () => {
     ).toMatchSnapshot();
   });
 
+  it("works with newlines in interpolation", () => {
+    let interp1 = dd`second
+                       third
+                     fourth`;
+    let interp2 = dd`fifth again
+                       sixth
+                     seventh`;
+    expect(
+      dd`first
+         ${interp1}
+         fifth ${interp2}
+         eighth`
+    ).toMatchSnapshot();
+  });
+
   it("works with suppressed newlines", () => {
     expect(
       dd`first \
