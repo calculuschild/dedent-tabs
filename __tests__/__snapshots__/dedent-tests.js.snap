@@ -60,6 +60,16 @@ seventh
 eighth"
 `;
 
+exports[`dedent works with non-string values in interpolation 1`] = `
+"first
+2
+undefined
+null
+true
+[object Object]
+third"
+`;
+
 exports[`dedent works with removing same number of spaces 1`] = `
 "first
    second

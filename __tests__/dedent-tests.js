@@ -34,6 +34,23 @@ describe("dedent", () => {
     ).toMatchSnapshot();
   });
 
+  it("works with non-string values in interpolation", () => {
+    let interp1 = 2;
+    let interp2 = undefined;
+    let interp3 = null;
+    let interp4 = true;
+    let interp5 = {myObj : "myObj"};
+    expect(
+      dd`first
+         ${interp1}
+         ${interp2}
+         ${interp3}
+         ${interp4}
+         ${interp5}
+         third`
+    ).toMatchSnapshot();
+  });
+
   it("works with suppressed newlines", () => {
     expect(
       dd`first \
