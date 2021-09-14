@@ -23,7 +23,7 @@ export default function dedent(
     if (i < values.length) {
       const lastLine = result.substring(result.lastIndexOf('\n') + 1);
       const m = lastLine.match(/^(\s*)\S?/);
-      result += values[i].replace(/\n/g, '\n' + m[1]);
+      result += values[i].toString().replace(/\n/g, '\n' + m[1]);
     }
   }
 
